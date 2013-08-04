@@ -1,0 +1,18 @@
+<html>
+<head>
+<title>Remote Surveillance System</title>
+</head>
+<body>
+ 
+<img name="frame" src="" border="0" />
+ 
+<script type="text/javascript">
+function showFrame() {
+    document.images.frame.src = "img.jpg?" + Math.random();
+    setTimeout("showFrame()", 3000);
+}
+showFrame();
+</script>
+ 
+</body>
+</html> 

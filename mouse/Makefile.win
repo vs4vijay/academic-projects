@@ -1,0 +1,47 @@
+# Project: MouseViz
+# Makefile created by Dev-C++ 5.0.0.9
+
+CPP      = g++.exe
+CC       = gcc.exe
+WINDRES  = windres.exe
+OBJ      = mouse/cvaux.o mouse/cvblob.o mouse/cvcolor.o mouse/cvcontour.o mouse/cvlabel.o mouse/cvtrack.o mouse/Mouse-0.1.o $(RES)
+LINKOBJ  = mouse/cvaux.o mouse/cvblob.o mouse/cvcolor.o mouse/cvcontour.o mouse/cvlabel.o mouse/cvtrack.o mouse/Mouse-0.1.o $(RES)
+LIBS     = -L"C:/Program Files/Dev-Cpp/MinGW32/lib" -L"C:/OpenCV2.0/lib" -llibcxcore200 -llibcv200 -llibcvaux200 -llibhighgui200 -llibml200 -llibcxts200  
+INCS     = -I"C:/Program Files/Dev-Cpp/MinGW32/include"  -I"C:/OpenCV2.0/include/opencv" 
+CXXINCS  = -I"C:/Program Files/Dev-Cpp/MinGW32/include"  -I"C:/OpenCV2.0/include/opencv" 
+BIN      = MouseViz.exe
+CXXFLAGS = $(CXXINCS)   -llibcxcore200 -llibcv200 -llibcvaux200 -llibhighgui200 -llibml200 -llibcxts200
+CFLAGS   = $(INCS)   -llibcxcore200 -llibcv200 -llibcvaux200 -llibhighgui200 -llibml200 -llibcxts200
+RM       = rm -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before MouseViz.exe all-after
+
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CPP) $(LINKOBJ) -o "MouseViz.exe" $(LIBS)
+
+mouse/cvaux.o: mouse/cvaux.cpp
+	$(CPP) -c mouse/cvaux.cpp -o mouse/cvaux.o $(CXXFLAGS)
+
+mouse/cvblob.o: mouse/cvblob.cpp
+	$(CPP) -c mouse/cvblob.cpp -o mouse/cvblob.o $(CXXFLAGS)
+
+mouse/cvcolor.o: mouse/cvcolor.cpp
+	$(CPP) -c mouse/cvcolor.cpp -o mouse/cvcolor.o $(CXXFLAGS)
+
+mouse/cvcontour.o: mouse/cvcontour.cpp
+	$(CPP) -c mouse/cvcontour.cpp -o mouse/cvcontour.o $(CXXFLAGS)
+
+mouse/cvlabel.o: mouse/cvlabel.cpp
+	$(CPP) -c mouse/cvlabel.cpp -o mouse/cvlabel.o $(CXXFLAGS)
+
+mouse/cvtrack.o: mouse/cvtrack.cpp
+	$(CPP) -c mouse/cvtrack.cpp -o mouse/cvtrack.o $(CXXFLAGS)
+
+mouse/Mouse-0.1.o: mouse/Mouse-0.1.cpp
+	$(CPP) -c mouse/Mouse-0.1.cpp -o mouse/Mouse-0.1.o $(CXXFLAGS)
