@@ -1,0 +1,95 @@
+a,a:link,a:visited,
+#rightbar_pin_container ul li a.rightBarControl,
+#thread_navigation ul,
+#thread_label { color: #719602;}
+
+#sharemenu ul li a { color: #719602 !important;}
+
+#rightcontainer .post .timestamp.highlight{ color: #0F4561 !important;}
+#rightcontainer .post .date.highlight{ color: #0F4561 !important;}
+
+#rightcontainer .post .site-bg-color, .site-bg-color,
+.site-bg-color:link,
+.site-bg-color:visited {
+	background-color: #719602;
+	fill:#719602;
+	color: #fff;
+}
+
+.site-forecolor { color: #719602; }
+
+.svg-widget .site-bg-color {fill:#719602;}
+
+a.brand {
+	width: 293px;
+	height: 85px;
+	left: 10px;
+	top: -31px;
+	background: transparent url("../img/logo-lifehacker.png") top left no-repeat;
+	background-size: 293px 85px;
+}
+
+.page-tag a.brand {
+	background: transparent url("../img/logo-tagpage.png") 12px -2px no-repeat;
+	height:35px;
+	width:192px;
+	background-size: 175px 37px;
+}
+
+.page-tag .inner .topchrome { background-color: #719602;border-color:#719602 !important; }
+.page-tag #switch_view li a { color:#FFF !important;background-color: transparent;border-color: transparent; }
+
+/* retina logos */
+@media screen and (-webkit-min-device-pixel-ratio: 2) {
+
+	a.brand {
+		background-image: url('../img/logo-lifehacker@2x.png');
+	}
+	
+	.page-tag a.brand {
+		background-image: url('../img/logo-tagpage@2x.png');
+	}
+
+}
+
+
+h1 a, h2 a, h3 a, h4 a, h5 a, h6 a { color:#111 !important; }
+h5 a, h6 a { font-weight:normal; }
+
+
+/* OPEN DESIGN PER SITE STYLES */
+.marked-head { background-color: #EBEEDD; }
+
+.ui-shade,
+#rightcontainer .post:hover { background-color: #F8FAF2 !important; }
+
+.ad-shade { background-color: #f0f4e3 !important; }
+
+.ui-border { border-color: #CAD2A7 !important; }
+.ui-background { background-color: #CAD2A7 !important; }
+.threadbullet { background-color: #CAD2A7; }
+
+.ui-border-light { border-color: #F8FAF2 !important; }
+.ui-light, .ui-light a { color: #A6BC65 !important; }
+	.ui-shade .ui-light, .ui-shade .ui-light a { color: #719602 !important; }
+
+li.selected a,
+#thread_navigation a.selected {
+	background-color: #709602;
+	border-color: #709602;
+	color: #FFFFFF;
+}
+
+
+#thumb_list .item.current img { border-color: #719602; }
+
+.post-body li, ul.related li {  list-style-image: url('../img/bullet.png'); }
+
+.airport.views.highlight { background-image: url("../img/icon-flame.png") !important; }
+.airport.comments.highlight { background-image: url("../img/icon-comment.png") !important; }
+
+.post-supp .post-meta #author-menu li span,
+.post-supp .post-meta #author-menu a { color: #719602 !important;}
+
+#tomorrowsnews span { padding-top: 105px; }
+#tomorrowsnews { background-color: #F8FAF2; }
