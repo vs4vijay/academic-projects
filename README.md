@@ -3,9 +3,13 @@ academic-projects
 
 My Academic & Hobby Projects in C/C++, Java, Python.
 
-## SmsGui
+## SmsGUI
 
 Python GUI App for sending SMS via FooSms Web Gateway
+
+Run: `python SmsGUI.py`
+
+![SMS GUI](/screenshots/SmsGUI.png)
 
 ---
 
@@ -31,6 +35,8 @@ A simple python script to send SMS using command line
 
 Python script to get the results from RTU (rtu.ac.in) University website, and searches using Student Name instead of Enrollment No., Also uses GUI.
 
+![FinalFetch](/screenshots/FinalFetch.png)
+
 ---
 
 ## FaceDetect
@@ -42,6 +48,14 @@ A C++ based program to detect the face using OpenCV
 ## Eye Tracking
 
 A C++ based program to track eye movements using OpenCV
+
+---
+
+## VizRCM
+
+A Remote Computer Monitoring / Sharing program written in Java.
+
+![VizRCM](/screenshots/VizRCM.png)
 
 ---
 
@@ -61,6 +75,8 @@ A Web Application to create a RSS feed of any website.
 
 A Java based screenshot capture program
 
+![ScreenCapture](/screenshots/ScreenCapture.png)
+
 ---
 
 ## Send To Android
@@ -72,3 +88,5 @@ A windows registry hack which allows us to send any file to android device just 
 ## MetaBoard
 
 A Java Struts based Web Application to create sticky notes and voting system
+
+---
