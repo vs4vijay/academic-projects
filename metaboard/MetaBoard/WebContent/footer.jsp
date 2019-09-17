@@ -1,0 +1,1 @@
+<img style="border-radius: 0 0 15px 15px" src="images/footer.png" height="10%" width="100%"/>

@@ -1,0 +1,438 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+
+<!DOCTYPE struts-config PUBLIC
+          "-//Apache Software Foundation//DTD Struts Configuration 1.1//EN"
+          "http://jakarta.apache.org/struts/dtds/struts-config_1_1.dtd">
+
+
+
+<!--
+
+     This is a blank Struts configuration file with an example
+
+     welcome action/page and other commented sample elements.
+
+
+
+     Tiles and the Struts Validator are configured using the factory defaults
+
+     and are ready-to-use.
+
+
+
+     NOTE: If you have a generator tool to create the corresponding Java classes
+
+     for you, you could include the details in the "form-bean" declarations.
+
+     Otherwise, you would only define the "form-bean" element itself, with the
+
+     corresponding "name" and "type" attributes, as shown here.
+
+-->
+
+
+
+<struts-config>
+
+<!-- ==================================== Data Source Configuration -->
+
+<!-- 
+
+ <data-sources>
+
+   <data-source>
+
+     <set-property
+
+        property="autoCommit"
+
+        value="true"/>
+
+     <set-property
+
+        property="description"
+
+        value="Example Data Source Configuration"/>
+
+     <set-property
+
+        property="driverClass"
+
+        value="com.mysql.jdbc.Driver"/>
+
+     <set-property
+
+        property="maxCount"
+
+        value="4"/>
+
+     <set-property
+
+        property="minCount"
+
+        value="2"/>
+
+     <set-property
+
+        property="password"
+
+        value="root"/>
+
+     <set-property
+
+        property="url"
+
+        value="jdbc:mysql://localhost:3306/metaboard"/>
+
+     <set-property
+
+        property="user"
+
+        value="root"/>
+
+   </data-source>
+
+ </data-sources>
+
+ -->
+
+
+
+<!-- ======================================== Form Bean Definitions -->
+
+
+<form-beans>
+
+    <form-bean name="adminOperation" 
+   type="org.apache.struts.action.DynaActionForm">
+   <form-property name="opType" type="java.lang.String"/>
+   <form-property name="name" type="java.lang.String"/>
+     
+</form-bean>
+
+    <form-bean name="mailRequest" 
+   type="org.apache.struts.action.DynaActionForm">
+   <form-property name="emailID" type="java.lang.String"/>
+   <form-property name="subject" type="java.lang.String"/>
+   <form-property name="message" type="java.lang.String"/>
+    </form-bean>
+    <form-bean name="postForm" 
+    type="com.metagurukul.metaboard.model.notification.Notification">
+    </form-bean>
+     
+    <form-bean name="updateForm" 
+    type="com.metagurukul.metaboard.model.notification.Notification">
+    </form-bean>
+    
+    <form-bean name="registrationRequest" 
+	type="com.metagurukul.metaboard.model.member.Member">
+	</form-bean>
+	
+	<form-bean name="authForm" 
+	type="com.auth.forms.AuthForm" />
+
+</form-beans>
+
+
+
+
+
+
+<!-- ================================= Global Exception Definitions -->
+
+
+
+    <global-exceptions>
+
+        <!-- sample exception handler
+
+        <exception
+
+            key="expired.password"
+
+            type="app.ExpiredPasswordException"
+
+            path="/changePassword.jsp"/>
+
+        end sample -->
+
+    </global-exceptions>
+
+
+
+
+
+<!-- =================================== Global Forward Definitions -->
+
+
+
+    <global-forwards>
+
+        <!-- Default forward to "Welcome" action -->
+
+        <!-- Demonstrates using index.jsp to forward -->
+
+        <forward
+
+            name="welcome"
+
+            path="/Welcome.do"/>
+
+    </global-forwards>
+
+
+
+
+
+<!-- =================================== Action Mapping Definitions -->
+
+
+
+    <action-mappings>
+
+
+
+            <!-- Default "Welcome" action -->
+
+            <!-- Forwards to Welcome.jsp -->
+
+        	<action
+            path="/Welcome"
+            type="org.apache.struts.actions.ForwardAction"
+            parameter="/pages/Welcome.jsp"/>
+            
+            <action
+            path="/adminOperationAction"
+            name="adminOperation"
+            type="com.metagurukul.metaboard.action.AdminOperationAction"
+            scope="request" >
+	            <forward name="success" path="/success.jsp"></forward>
+	            <forward name="failure" path="/error.jsp"></forward>
+            </action>
+            <action
+               path="/sendMail"
+               type="com.metagurukul.metaboard.action.SendMail"
+               name="mailRequest"
+            scope="request">
+	            <forward name="success" path="/success.jsp"></forward>
+	            <forward name="failure" path="/error.jsp"></forward>
+            </action>
+			
+			<action
+            path="/showAction"
+            type="com.metagurukul.metaboard.action.ShowAction"
+            scope="request">
+	            <forward name="success" path="/notification.jsp"></forward>
+	            <forward name="failure" path="/error.jsp"></forward>
+            </action>
+            
+            <action 
+                path="/myAction"
+                type="com.metagurukul.metaboard.action.MyAction"
+                />
+            <action
+            path="/showPublicNotificationAction"
+            type="com.metagurukul.metaboard.action.ShowPublicNotificationAction"
+            scope="request">
+	            <forward name="success" path="/publicNotification.jsp"></forward>
+	            <forward name="failure" path="/error.jsp"></forward>
+            </action>
+            
+            <action
+            path="/loginAction"
+            type="com.metagurukul.metaboard.action.LoginAction"
+            scope="request">
+	            <forward name="home" path="/home.jsp"></forward>
+	            <forward name="success" path="/notification.jsp"></forward>
+	            <forward name="failure" path="/error.jsp"></forward>
+            </action>
+            
+            
+            <action
+            path="/logoutAction"
+            type="com.metagurukul.metaboard.action.LogoutAction"
+            scope="request">
+	            <forward name="home" path="/home.jsp"></forward>
+	            <forward name="success" path="/notification.jsp"></forward>
+	            <forward name="failure" path="/error.jsp"></forward>
+            </action>
+            
+            <action
+            path="/updateAction"
+            type="com.metagurukul.metaboard.action.UpdateAction"
+            name="updateForm"
+            scope="request"
+            input="/notification.jsp">
+	            <forward name="success" path="/notification.jsp"></forward>
+	            <forward name="failure" path="/error.jsp"></forward>
+            </action>
+            
+            <action
+            path="/postAction"
+            type="com.metagurukul.metaboard.action.PostAction"
+            name="postForm"
+            scope="request"
+            validate="true"
+            input="/notification.jsp">
+	            <forward name="success" path="/notification.jsp"></forward>
+	            <forward name="failure" path="/error.jsp"></forward>
+            </action>
+     
+       		
+			<action
+            path="/removeAction"
+            type="com.metagurukul.metaboard.action.RemoveAction"
+            scope="request">
+	            <forward name="success" path="/notification.jsp"></forward>
+	            <forward name="failure" path="/error.jsp"></forward>
+            </action>
+            
+            <action
+            path="/restoreAction"
+            type="com.metagurukul.metaboard.action.RestoreAction"
+            scope="request">
+	            <forward name="success" path="/notification.jsp"></forward>
+	            <forward name="failure" path="/error.jsp"></forward>
+            </action>
+            
+            <action
+            path="/deleteAction"
+            type="com.metagurukul.metaboard.action.DeleteAction"
+            scope="request">
+	            <forward name="success" path="/notification.jsp"></forward>
+	            <forward name="failure" path="/error.jsp"></forward>
+            </action>
+            
+           	<action path="/registrationAction" name="registrationRequest" validate="true"
+		  	input="/registration.jsp" scope="session"
+			type="com.metagurukul.metaboard.action.RegistrationAction" >
+				<forward name="success" path="/success.jsp"></forward>
+				<forward name="failure" path="/error.jsp"></forward>
+			</action>
+		
+ 			<action path="/socialAuth" 
+ 			type="com.auth.actions.SocialAuthenticationAction" 
+            name="authForm" scope="session">
+            	<forward name="home" path="/home.jsp" />
+       		</action>
+        
+        	<action path="/socialAuthSuccessAction" 
+        	type="com.auth.actions.SocialAuthSuccessAction" 
+            name="authForm" scope="session">
+                <forward name="success" path="/home.jsp" />
+                <forward name="failure" path="/error.jsp" />
+                <forward name="register" path="/registration.jsp" />
+        	</action>
+        	
+        	
+    <!-- sample input anxcg sds d input submit actions
+
+
+
+        <action
+
+            path="/Input"
+
+            type="org.apache.struts.actions.ForwardAction"
+
+            parameter="/pages/Input.jsp"/>
+
+
+
+        <action
+
+            path="/InputSubmit"
+
+            type="app.InputAction"
+
+            name="inputForm"
+
+            scope="request"
+
+            validate="true"
+
+            input="/pages/Input.jsp"/>
+
+
+
+    end samples -->
+
+
+
+
+
+    </action-mappings>
+
+
+
+
+
+<!-- ===================================== Controller Configuration -->
+
+
+
+    <controller
+
+       processorClass="org.apache.struts.tiles.TilesRequestProcessor"/>
+
+
+
+
+
+<!-- ================================ Message Resources Definitions -->
+
+
+
+    <message-resources parameter="resources.application"/>
+
+
+
+
+
+<!-- ======================================= Plug Ins Configuration -->
+
+
+  <!-- ========== Tiles plugin ===================  -->
+  <!--												-->
+  <!--
+     This plugin initialize Tiles definition factory. This later can takes some
+	 parameters explained here after. The plugin first read parameters from web.xml, then
+	 overload them with parameters defined here. All parameters are optional.
+	 The plugin should be declared in each struts-config file.
+       - definitions-config: (optional) 
+            Specify configuration file names. There can be several comma 
+		    separated file names (default: ?? )
+       - moduleAware: (optional - struts1.1) 
+            Specify if the Tiles definition factory is module aware. If true (default), 
+			there will be one factory for each Struts module. 
+			If false, there will be one common factory for all module. In this later case, 
+			it is still needed to declare one plugin per module. The factory will be 
+			initialized with parameters found in the first initialized plugin (generally the
+			one associated with the default module).
+			  true : One factory per module. (default)
+			  false : one single shared factory for all modules
+	   - definitions-parser-validate: (optional)
+	        Specify if xml parser should validate the Tiles configuration file.
+			  true : validate. DTD should be specified in file header. (default)
+			  false : no validation
+			  
+	  Paths found in Tiles definitions are relative to the main context.
+  -->
+  <!-- comment following if struts1.0.x -->
+  <plug-in className="org.apache.struts.tiles.TilesPlugin" >
+    <set-property property="definitions-config" 
+	                 value="/WEB-INF/tiles-defs.xml" />
+    <set-property property="moduleAware" value="true" />
+    <set-property property="definitions-parser-validate" value="true" />
+  </plug-in>
+
+  <!-- end comment if struts1.0.x -->
+
+  <plug-in className="org.apache.struts.validator.ValidatorPlugIn">
+    <set-property
+        property="pathnames"
+        value="/WEB-INF/validator-rules.xml,/WEB-INF/validation.xml"/>
+  </plug-in>
+
+</struts-config>
+

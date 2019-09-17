@@ -1,0 +1,20 @@
+package com.metagurukul.metaboard.model.section;
+
+public class Section {
+	int sectionID;
+	String sectionName;
+	public int getSectionID() {
+		return sectionID;
+	}
+	public void setSectionID(int sectionID) {
+		this.sectionID = sectionID;
+	}
+	public String getSectionName() {
+		return sectionName;
+	}
+	public void setSectionName(String sectionName) {
+		this.sectionName = sectionName;
+	}
+	
+
+}

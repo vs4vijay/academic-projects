@@ -1,0 +1,38 @@
+.upperButton
+{
+	-moz-box-shadow:inset -2px 1px 4px -2px #bbdaf7;
+	-webkit-box-shadow:inset -2px 1px 4px -2px #bbdaf7;
+	box-shadow:inset -2px 1px 4px -2px #bbdaf7;
+	background-color:#79bbff;
+	-moz-border-radius:6px;
+	-webkit-border-radius:6px;
+	border-radius:6px;
+	border:1px solid #84bbf3;
+	display:inline-block;
+	color:#ffffff;
+	font-family:arial;
+	font-size:15px;
+	font-weight:bold;
+	padding:2px 0px;
+	text-decoration:none;
+	text-shadow:1px 1px 0px #528ecc;
+	height: 30px;
+	width: 70px;
+	margin: 1% 0 1% 0;
+	color: black;
+}
+.upperButton:hover 
+{
+	background-color:#378de5;
+}
+.upperButton:active 
+{
+	position:relative;
+	top:1px;
+}
+
+
+.errors
+{
+	color: red;
+}
