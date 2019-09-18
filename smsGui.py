@@ -62,7 +62,3 @@ button = Button(root,text='Send',command=send)
 button.grid(column=0,row=3,columnspan=2,padx=5,pady=5)
 
 root.mainloop()
-
-
-
-

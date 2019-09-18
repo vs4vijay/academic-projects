@@ -29,11 +29,15 @@ A GUI program written in Java which generates the PoJo model for any Java Class
 
 A simple python script to send SMS using command line
 
+Run: `python foosms.py`
+
 ---
 
 ## FinalFetch
 
 Python script to get the results from RTU (rtu.ac.in) University website, and searches using Student Name instead of Enrollment No., Also uses GUI.
+
+Run: `python FinalFetch.py`
 
 ![FinalFetch](/screenshots/FinalFetch.png)
 
@@ -55,6 +59,8 @@ A C++ based program to track eye movements using OpenCV
 
 A Remote Computer Monitoring / Sharing program written in Java.
 
+Run: `java -jar VizRCM.jar`
+
 ![VizRCM](/screenshots/VizRCM.png)
 
 ---
@@ -74,6 +80,8 @@ A Web Application to create a RSS feed of any website.
 ## ScreenCapture
 
 A Java based screenshot capture program
+
+Run: `java -jar ScreenCapture.jar`
 
 ![ScreenCapture](/screenshots/ScreenCapture.png)
 
