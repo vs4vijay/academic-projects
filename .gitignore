@@ -17,3 +17,5 @@
 .project
 .metadata
  bin/
+ 
+ *.o
