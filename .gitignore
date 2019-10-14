@@ -14,6 +14,8 @@
  target/
 .classpath
 .settings/
+*.settings/
+
 .project
 .metadata
  bin/
