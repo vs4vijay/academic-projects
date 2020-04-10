@@ -11,9 +11,11 @@
 *.jar
 *.war
 *.ear
- target/
+target/
 .classpath
 .settings/
 .project
 .metadata
- bin/
+bin/
+
+war/

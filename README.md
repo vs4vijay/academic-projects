@@ -1,7 +1,7 @@
 academic-projects
 ==============
 
-My Academic & Hobby Projects in C/C++, Java, Python.
+My Academic & Hobby Projects in C/C++, Java, Python
 
 ## SmsGUI
 
@@ -19,7 +19,7 @@ A KeyLogger Written in C++
 
 ---
 
-## Pojo Generator
+## POJO Generator
 
 A GUI program written in Java which generates the PoJo model for any Java Class
 
@@ -29,7 +29,7 @@ A GUI program written in Java which generates the PoJo model for any Java Class
 
 A simple python script to send SMS using command line
 
-Run: `python foosms.py`
+Run: `python FooSMS.py`
 
 ---
 
@@ -96,5 +96,7 @@ A windows registry hack which allows us to send any file to android device just 
 ## MetaBoard
 
 A Java Struts based Web Application to create sticky notes and voting system
+
+![ScreenCapture](/screenshots/MetaBoard.jpg)
 
 ---
